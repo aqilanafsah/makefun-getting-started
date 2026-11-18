@@ -86,6 +86,27 @@ write a single line — half of all failed entries fail on a rule that was writt
 That reading session is your first real action on the platform, and it is the one that most
 improves your odds.
 
+### Step 5 — See the whole loop once, so nothing later surprises you
+
+You do not need these commands today, but knowing the shape of a full entry removes most of
+the mystery:
+
+1. **Connect the kit to your account once.** From inside the kit folder, run
+   `node cli/makefun.mjs login`. It prints a link with an approval code; open it while signed
+   in and approve. From then on, anything the kit submits goes in under your username, and it
+   also sets up the keypair that signs your entries and receives your prizes.
+2. **Build in a fresh agent session**, in a public GitHub repository with an open-source
+   license, starting from the kit's `starter/` files if the bounty provides them.
+3. **Grade locally where the bounty allows it.** Some kits can score your entry on practice
+   data with `grade-local`, in the same kind of sandbox the server uses. It is the cheapest
+   feedback you will ever get.
+4. **Bundle, check, submit.** `bundle` packs your session transcripts, `check` runs the
+   site's own pre-submission tests on your machine, and `submit` sends the repository, the
+   commit and the bundle. Your status page then shows the entry as submitted, checked, scored
+   or rejected — and a rejection always names the failed checks and how to fix them.
+
+That is the entire loop. Every bounty you ever enter repeats it with different content.
+
 ## Finding your way around
 
 | Place | What it is for |
@@ -148,6 +169,15 @@ moment your account exists.
   prize claim can stall at the worst moment.
 - **Deadline optimism.** Grading and checks take time. Submitting an hour before the deadline
   is fine; submitting two minutes before it is a coin toss.
+- **Burning submissions on fixable errors.** Bounties cap how many entries you can send per
+  day, and a rejected entry still counts against that cap. Run `check` locally first, every
+  time — it exists precisely to catch the failures you would otherwise spend a slot learning
+  about.
+- **Skipping the local grade.** Where a kit offers `grade-local`, use it. A weak practice
+  score is information; a weak official score is a spent opportunity.
+- **A README in the wrong place.** If a bounty asks for a README at your repository root, a
+  copy inside `.github/` will shadow it on the repository page and can get the entry refused.
+  Keep the guide where the rules say: the root, with the exact filename given.
 
 ## Questions newcomers ask
 
@@ -174,6 +204,17 @@ name yourself.
 Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, Qwen Code, opencode, Cline, Aider and
 dozens more are detected automatically by the kit. Anything else can usually hand its session
 file over explicitly.
+
+**What happens if my entry is rejected?**
+Nothing permanent. The status page lists each failed check together with its fix. Correct the
+cause — not just the symptom — verify locally, and submit again while entries are open. Most
+rejections are small, specific things: a missing file, a session that started too early, a
+rule that was easy to miss on a first read.
+
+**Can I enter with friends?**
+Yes, but a team enters under one person's account and splits any prize itself. Pick the
+account before you start, because entries, transcripts and the payout wallet all belong to
+it.
 
 ## Official links
 
